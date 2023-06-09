@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <style>
+        .header{
+            background-color: lightblue;
+            padding:20px;
+            text-align: center;
+            color:white;
+        }
+        .topnav{
+            background-color: black;
+            overflow: hidden;
+
+        }
+        .topnav a{
+            float:left;
+            color:white;
+            text-align: right;
+            padding: 14px 16px;
+            display: block;
+        }
+        .topnav a:hover{
+            background-color:aliceblue;
+            color:black;
+        }
+    </style>
+    <body>
+        <div class="header">
+            <h1>Intershala</h1>
+        </div>
+        <div class="topnav">
+            <a href="index.html">Home</a>
+            <a href="#">Intership</a>
+            <a href="#">Jobs</a>
+            {% if user.is_authenticated %}
+            <a href="#">welcome {{ user.username }}</a>
+            <a href="{% url 'logout'%}">Logout</a>
+            {% else %}
+            <a href="login">Login</a>
+            <a href="register">Register</a>
+            {% endif %}
+        </div>
+
+
+    </body>
+</html>

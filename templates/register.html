@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body align = "center">
+        <form method="POST">
+            {% csrf_token %}
+            First Name:<input type="text" name="first_name" placeholder="first name"><br>
+            <br>
+            Last Name:<input type="text" name="last_name" placeholder="last name"><br>
+            <br>
+            User Name:<input type="text" name="username" placeholder="username"><br>
+            <br>
+            Email:<input type="email" name="email" placeholder="email"><br>
+            <br>
+            Password:<input type="Password" name="Password1" placeholder="Password"><br>
+            <br>
+            Confirm Password:<input type="Password" name="Password2" placeholder="confirm Password"><br>
+            <br>
+            <input type="submit">
+            <br>
+        </form>
+        <div>
+            {% for message in message %}
+            <h3> {{ message }} </h3>
+            {% endfor %}
+    </body>
+</html>
+
+
